@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e0e0f">
+<meta name="description" content="Repositório de materiais de estudo de Guilherme Mont’Alvão. Acesse resumos, simulados e estações de treino.">
+<title>Materiais — Repositório de estudos</title>
+<script>try{const t=localStorage.getItem('osce-ham8-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700;750&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--page:#0e0e0f;--panel:#181819;--card:#1d1d1f;--raised:#202022;--edge:#2b2b2e;--text:#f5f5f5;--muted:#a0a0a5;--muted2:#77777e;--white:#fafafa;--contrast:#131315;--blue:#4c82f6;--green:#81cf9f;--hover:#262629;--card-active:#1d1d1f}
+:root[data-theme="light"]{color-scheme:light;--page:#f5f5f6;--panel:#fff;--card:#f8f8f9;--raised:#f0f0f2;--edge:#e5e5e8;--text:#161619;--muted:#66666e;--muted2:#82828a;--white:#1b1b1d;--contrast:#fff;--blue:#4278ef;--green:#247c52;--hover:#ececef;--card-active:#fff}
+*{box-sizing:border-box}
+html{background:var(--page);scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;min-width:320px;background:var(--page);color:var(--text);font:400 14px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+button,input{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}button,a{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+::selection{background:#4c82f66e}
+svg{display:block;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icon{width:18px;height:18px} [hidden]{display:none!important}
+.app-shell{max-width:1300px;min-height:100vh;padding:14px 18px 24px;margin:0 auto;display:grid;grid-template-columns:246px minmax(0,1fr);gap:16px;align-items:start}
+/* Lateral: mesma estrutura, cores e tamanho do painel do OSCE */
+.sidebar{position:sticky;top:14px;height:calc(100dvh - 28px);min-height:0;display:flex;flex-direction:column;min-width:0;z-index:50}
+.side-head{display:flex;gap:10px;align-items:center;min-height:56px;padding:10px 12px;margin-bottom:12px;background:var(--card);border:1px solid var(--edge);border-radius:14px}
+.side-logo{width:33px;height:33px;display:grid;place-items:center;background:var(--blue);color:#fff;border-radius:9px;font-size:.95rem;font-weight:750;flex:none}
+.side-head-copy{min-width:0;line-height:1.3}.side-head-copy strong{display:block;font-size:.77rem;font-weight:650}.side-head-copy small{display:block;margin-top:2px;font-size:.64rem;color:var(--muted)}
+.side-scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--edge) transparent;padding:2px 4px}
+.side-section-label{font-size:.70rem;font-weight:560;line-height:1.3;margin:18px 10px 9px;color:var(--text)}
+.side-link{display:flex;align-items:center;gap:10px;min-height:38px;width:100%;padding:9px 11px;margin:1px 0;border:0;background:transparent;text-align:left;border-radius:9px;font-size:.77rem;font-weight:450;color:var(--muted);transition:background .15s,color .15s}
+.side-link .icon{width:16px;height:16px}.side-link:hover{background:var(--raised);color:var(--text)}.side-link[aria-current="page"]{background:var(--white);color:var(--contrast);font-weight:610}
+.side-link .right-num{margin-left:auto;font-size:.68rem;font-variant-numeric:tabular-nums;opacity:.85}
+.side-divider{height:1px;margin:15px 10px 5px;background:var(--edge)}
+.subject-dot{height:21px;width:21px;display:grid;place-items:center;background:#7cc243;border-radius:6px;color:#111;font-size:.65rem;font-weight:700;flex:none}
+.side-note{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:12px 13px;margin:16px 0 5px;color:var(--muted);font-size:.70rem;line-height:1.65}
+.side-note strong{display:block;font-size:.75rem;font-weight:610;color:var(--text);margin-bottom:3px}
+.side-footer{border-top:1px solid var(--edge);padding:11px 8px 12px;color:var(--muted);font-size:.69rem;line-height:1.6}
+.theme-toggle{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;color:var(--muted);padding:6px 0 8px;background:transparent;border:0;text-align:left;font-size:.73rem}.theme-toggle svg{width:16px;height:16px}
+.side-footer small{display:block;font-size:.66rem}
+/* Painel central */
+.app-frame{min-height:calc(100dvh - 38px);min-width:0;overflow:clip;background:var(--panel);border:1px solid var(--edge);border-radius:17px}
+.top{height:66px;padding:0 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--edge)}
+.top-left{display:flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);min-width:0}.top-left strong{color:var(--text);font-weight:550}.top-left svg{width:13px;height:13px;color:var(--muted2)}
+.top-right{display:flex;align-items:center;gap:14px;flex:none}.top-count{font-size:.71rem;color:var(--muted);white-space:nowrap}
+.top-search{display:flex;align-items:center;gap:9px;border:1px solid var(--edge);background:var(--card);border-radius:9px;padding:8px 11px;min-height:35px;color:var(--muted);font-size:.72rem}.top-search:hover{color:var(--text);border-color:#55555d}.top-search .icon{width:15px;height:15px}.top-search kbd{border:1px solid var(--edge);padding:1px 5px;border-radius:4px;font:400 .63rem Inter,system-ui;margin-left:15px}
+.top-menu{display:none;width:36px;height:36px;align-items:center;justify-content:center;background:var(--raised);border:1px solid var(--edge);border-radius:9px;color:var(--text);flex:none}.top-menu svg{width:19px;height:19px}
+.mobile-rail{display:none}.mobile-dock{display:none}.side-backdrop{display:none}
+.content{padding:22px 26px 35px;min-width:0}
+/* Cabeçalho do repositório: mesmo visual do hero do OSCE */
+.hero{padding:0 0 16px;margin-bottom:3px}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:7px;min-height:24px}
+.eyebrow{font-size:.72rem;color:var(--muted);font-weight:530}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--edge);border-radius:8px;background:var(--raised);padding:6px 10px;color:var(--muted);font-size:.66rem;font-weight:500;white-space:nowrap}
+.hero-tag:before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(2.35rem,3.4vw,2.9rem);font-weight:440;letter-spacing:-.055em;line-height:1.17;margin:4px 0 9px;text-wrap:balance}
+.lede{color:var(--muted);font-size:.9rem;line-height:1.8;max-width:770px;margin:0 0 23px}
+.hero-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0 18px;border-bottom:1px solid var(--edge)}
+.hero-stats{display:flex;flex-wrap:wrap;align-items:stretch;gap:0;min-width:0}
+.hero-stat{display:flex;align-items:baseline;gap:8px;color:var(--muted);padding-right:19px;margin-right:19px;border-right:1px solid var(--edge);line-height:1.4;font-size:.71rem}
+.hero-stat:last-child{border-right:0}.hero-stat strong{font-size:1.2rem;font-weight:650;color:var(--text);white-space:nowrap;font-variant-numeric:tabular-nums}.hero-stat span{max-width:88px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 14px;min-height:39px;border-radius:9px;border:1px solid var(--white);background:var(--white);color:var(--contrast);font-size:.77rem;font-weight:610;white-space:nowrap}.btn .icon{width:15px;height:15px}.btn:hover{opacity:.85}
+.btn.ghost{background:var(--raised);border-color:var(--edge);color:var(--text)}.btn.ghost:hover{background:var(--hover)}
+/* Seções */
+.section{scroll-margin-top:110px}.content-section-label{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:25px 0 12px}
+.content-section-label h2{font-size:.99rem;font-weight:650;line-height:1.3;letter-spacing:-.02em;margin:0}.content-section-label small{font-size:.70rem;color:var(--muted)}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.filter{min-height:32px;border:1px solid var(--edge);border-radius:8px;background:var(--raised);color:var(--muted);padding:6px 12px;font-size:.72rem}.filter:hover{color:var(--text)}.filter[aria-pressed="true"]{background:var(--white);color:var(--contrast);border-color:var(--white);font-weight:650}
+.search{display:flex;align-items:center;gap:9px;min-height:36px;width:min(280px,100%);padding:7px 11px;background:var(--card);border:1px solid var(--edge);border-radius:9px;color:var(--muted)}.search:focus-within{border-color:var(--blue)}.search svg{width:15px;height:15px}.search input{min-width:0;flex:1;background:transparent;border:0;outline:none;font:inherit;font-size:.75rem;color:var(--text)}.search input::placeholder{color:var(--muted2)}.search kbd{border:1px solid var(--edge);font-size:.62rem;color:var(--muted);padding:0 5px;border-radius:4px}
+.materials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:10px}
+.material-card{position:relative;min-height:185px;display:flex;flex-direction:column;padding:17px 19px;border:1px solid var(--edge);border-radius:12px;background:var(--raised);transition:border-color .15s,background .15s}.material-card:hover{border-color:#55555d;background:var(--hover)}
+.material-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}.material-icon{width:34px;height:34px;border-radius:9px;background:var(--white);color:var(--contrast);display:grid;place-items:center}.material-icon .icon{width:17px;height:17px}.material-tag{color:var(--muted);font-size:.70rem;background:var(--card);border:1px solid var(--edge);padding:3px 9px;border-radius:7px}
+.material-card h3{font-size:.92rem;font-weight:620;letter-spacing:-.025em;margin:0 0 4px}.material-card p{color:var(--muted);font-size:.77rem;line-height:1.75;max-width:600px;margin:0 0 15px}
+.material-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--edge);padding-top:11px;margin-top:auto}.material-detail{display:flex;gap:7px;align-items:center;color:var(--muted);font-size:.70rem}.material-detail svg{width:14px;height:14px}.material-open{display:flex;align-items:center;gap:6px;color:var(--text);font-size:.74rem;font-weight:600;white-space:nowrap}.material-open svg{width:15px;height:15px}
+.empty{grid-column:1/-1;display:flex;align-items:flex-start;flex-direction:column;gap:8px;min-height:155px;padding:23px;border:1px dashed var(--edge);border-radius:12px;background:var(--card);color:var(--muted)}.empty b{color:var(--text);font-size:.85rem}.empty p{margin:0;font-size:.77rem}.empty button{color:var(--text);background:transparent;border:0;text-decoration:underline;padding:0;font-size:.77rem}
+/* OSCE style study steps, and compact FAQ */
+.flow-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:17px 14px;border:1px solid var(--edge);border-radius:14px;background:var(--card)}
+.step{position:relative;min-height:116px;padding:0 13px}.step-num{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;background:#fff;color:#111;font-size:.77rem;font-weight:700;margin-bottom:10px}
+:root[data-theme="light"] .step-num{background:#1b1b1c;color:#fff}
+.step strong{display:block;font-size:.77rem;font-weight:600;color:var(--text);line-height:1.5}.step p{color:var(--muted);font-size:.71rem;line-height:1.65;margin:3px 0 0}
+.qa{background:var(--card);border:1px solid var(--edge);border-radius:13px;padding:7px 18px}
+.qa details{border-top:1px solid var(--edge)}.qa details:first-child{border-top:0}.qa summary{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;padding:13px 0;list-style:none;font-size:.80rem;font-weight:550}.qa summary::-webkit-details-marker{display:none}.qa summary:after{content:"+";font-size:1.18rem;color:var(--muted);line-height:1}.qa details[open] summary:after{content:"−"}.qa details p{font-size:.76rem;line-height:1.7;color:var(--muted);padding:0 16px 12px 0;margin:0}
+.page-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--edge);margin-top:30px;padding-top:15px;color:var(--muted);font-size:.69rem}.page-footer a{text-decoration:underline;text-underline-offset:3px}
+/* Drawer, trilha e navegação inferior igual ao OSCE no celular */
+@media(max-width:1119px){
+ .app-shell{display:block;padding:10px 12px 20px}
+ .sidebar{position:fixed;top:0;left:0;bottom:0;height:100dvh;width:min(320px,88vw);background:var(--page);border-right:1px solid var(--edge);padding:14px 12px 0;transform:translateX(-105%);transition:transform .22s ease;z-index:60}
+ body.menu-open .sidebar{transform:translateX(0)}body.menu-open{overflow:hidden}
+ .side-backdrop{display:block;position:fixed;inset:0;background:#000b;z-index:55;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
+ body.menu-open .side-backdrop{visibility:visible;opacity:1;pointer-events:auto}
+ .app-frame{min-height:calc(100dvh - 20px)}.top{position:sticky;top:0;z-index:20;background:var(--panel)}.top-menu{display:inline-flex}.content{padding:23px 24px 55px}
+ .top-left{margin-right:auto}.top-search kbd{display:none}.top-count{font-size:.7rem}html{scroll-padding-top:118px}
+ .mobile-rail{display:flex;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;padding:0 20px 10px;background:var(--panel);border-bottom:1px solid var(--edge)}.mobile-rail::-webkit-scrollbar{display:none}
+ .rail-link{display:inline-flex;align-items:center;min-height:34px;gap:6px;flex:none;padding:5px 11px;border:1px solid var(--edge);border-radius:8px;background:var(--raised);color:var(--muted);font-size:.70rem}.rail-link[aria-current="page"]{background:var(--white);color:var(--contrast);border-color:var(--white)}
+}
+@media(max-width:750px){.flow-steps{grid-template-columns:1fr;gap:10px;padding:0;border:0;background:transparent}.step{min-height:0;padding:13px 14px 13px 54px;background:var(--card);border:1px solid var(--edge);border-radius:11px}.step-num{position:absolute;left:13px;top:13px;width:28px;height:28px;margin:0}.step p{font-size:.75rem}.material-card{min-height:170px}}
+@media(max-width:640px){
+ .app-shell{padding:0}.app-frame{border:0;border-radius:0;min-height:100dvh;overflow:visible}.top{height:55px;padding:0 16px}.top-left{font-size:.73rem;gap:5px;white-space:nowrap;overflow:hidden}.top-left .break{display:none}.top-left strong{overflow:hidden;text-overflow:ellipsis}.top-right{gap:9px}.top-search{width:35px;height:35px;padding:0;justify-content:center}.top-search span{display:none}.top-search svg{width:18px;height:18px}.top-count{font-size:.67rem}
+ .mobile-rail{padding:2px 16px 9px}.content{padding:21px 16px calc(97px + env(safe-area-inset-bottom,0px))}
+ .hero{padding:0 0 13px}.hero-top{margin-bottom:5px}.hero-tag{font-size:.62rem}.eyebrow{font-size:.69rem}
+ h1{font-size:2.18rem;margin:6px 0 11px}.lede{font-size:.84rem;line-height:1.75;margin-bottom:16px}
+ .hero-actions{display:block;padding:0 0 18px}.hero-stats{width:100%;margin-bottom:17px}.hero-stat{font-size:.66rem;gap:6px;padding-right:11px;margin-right:11px}.hero-stat strong{font-size:1.12rem}.hero-actions .btn{width:100%;min-height:43px}
+ .content-section-label{margin:16px 0 12px}.content-section-label h2{font-size:1rem}.content-section-label small{font-size:.65rem}
+ .toolbar{flex-direction:column;align-items:stretch}.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.filters::-webkit-scrollbar{display:none}.filter{white-space:nowrap;flex:none}.search{width:100%;min-height:42px}
+ .material-card{min-height:184px;padding:16px}.material-foot{flex-wrap:wrap;gap:7px}
+ .qa{padding:5px 14px}.qa summary{font-size:.79rem}
+ .page-footer{flex-wrap:wrap}
+ .mobile-dock{position:fixed;z-index:40;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--edge);padding:8px 9px calc(7px + env(safe-area-inset-bottom,0px))}
+ .dock-link{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:49px;min-width:0;color:var(--muted);font-size:.62rem;border-radius:9px}.dock-link .icon{width:19px;height:19px}.dock-link[aria-current="page"]{color:var(--contrast);background:var(--white)}
+}
+@media(max-width:360px){.top-left{font-size:.68rem}.top-count{font-size:.63rem}.hero-stat{padding-right:7px;margin-right:7px}.hero-stat strong{font-size:1.07rem}.material-open{font-size:.71rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.sidebar,.side-backdrop,.material-card{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute;overflow:hidden">
+ <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></symbol>
+ <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4"/></symbol>
+ <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5c3.3-1.5 5.9-1.5 8 0V20c-2.1-1.5-4.7-1.5-8 0Zm8 0c2.3-1.5 5-1.5 8 0V20c-3-1.5-5.7-1.5-8 0"/></symbol>
+ <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></symbol>
+ <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 0 1 5 0c0 1.7-2.5 2-2.5 3.8M12 17h.01"/></symbol>
+ <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="7.2"/><path d="m16.2 16.2 5 5"/></symbol>
+ <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+ <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+ <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+ <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></symbol>
+ <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8.3 8.3 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"/></symbol>
+</svg>
+<div class="app-shell" id="inicio">
+ <aside class="sidebar" id="sidebar" aria-label="Menu do repositório">
+  <a class="side-head" href="#inicio" aria-label="Repositório de materiais, voltar ao início">
+   <span class="side-logo" aria-hidden="true">G</span>
+   <span class="side-head-copy"><strong>Repositório de materiais</strong><small>Feito por Guilherme Mont’Alvão</small></span>
+  </a>
+  <div class="side-scroll">
+   <div class="side-section-label">Menu principal</div>
+   <nav id="side-nav" aria-label="Áreas do repositório">
+    <a class="side-link" href="#inicio" data-section="inicio" aria-current="page"><svg class="icon"><use href="#i-home"/></svg>Visão geral</a>
+    <a class="side-link" href="#materiais" data-section="materiais"><svg class="icon"><use href="#i-file"/></svg>Materiais <span class="right-num" id="nav-material-count">1</span></a>
+    <a class="side-link" href="#como-usar" data-section="como-usar"><svg class="icon"><use href="#i-list"/></svg>Como usar</a>
+    <a class="side-link" href="#perguntas" data-section="perguntas"><svg class="icon"><use href="#i-help"/></svg>Perguntas</a>
+   </nav>
+   <div class="side-divider"></div>
+   <div class="side-section-label">Disciplinas</div>
+   <div id="disciplinas-lateral" aria-label="Filtrar por disciplina"></div>
+   <div class="side-note"><strong>Todos os materiais em um lugar.</strong>Abra, pratique e retome seus estudos quando quiser.</div>
+  </div>
+  <footer class="side-footer">
+   <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Alternar aparência claro e escuro"><span id="theme-label">Aparência: escura</span><svg class="icon"><use id="theme-icon" href="#i-sun"/></svg></button>
+   <small>Feito por Guilherme Mont’Alvão</small>
+  </footer>
+ </aside>
+ <button type="button" class="side-backdrop" id="side-backdrop" aria-label="Fechar menu de navegação" tabindex="-1"></button>
+ <div class="app-frame">
+  <header class="top">
+   <button type="button" class="top-menu" id="menu-toggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><svg><use href="#i-menu"/></svg></button>
+   <div class="top-left"><span>Repositório</span><svg class="break"><use href="#i-chevron"/></svg><strong>Materiais</strong></div>
+   <div class="top-right"><button class="top-search" id="top-search" type="button" aria-label="Buscar material"><svg class="icon"><use href="#i-search"/></svg><span>Buscar material</span><kbd>/</kbd></button><span class="top-count" id="top-count">1 material</span></div>
+  </header>
+  <nav class="mobile-rail" aria-label="Navegação rápida">
+   <a class="rail-link" data-section="inicio" href="#inicio" aria-current="page">Início</a>
+   <a class="rail-link" data-section="materiais" href="#materiais">Materiais</a>
+   <a class="rail-link" data-section="como-usar" href="#como-usar">Como usar</a>
+   <a class="rail-link" data-section="perguntas" href="#perguntas">Perguntas</a>
+  </nav>
+  <main class="content">
+   <section class="hero section" aria-labelledby="titulo-repositorio">
+    <div class="hero-top"><div class="eyebrow">Repositório · Materiais de estudo</div><div class="hero-tag">Acesso livre</div></div>
+    <h1 id="titulo-repositorio">Seu espaço de estudos.</h1>
+    <p class="lede">Materiais organizados para você revisar, praticar e estudar no seu ritmo. Escolha uma disciplina e comece pelo conteúdo que precisa — no computador ou no celular.</p>
+    <div class="hero-actions">
+     <div class="hero-stats" aria-label="Resumo do repositório">
+      <div class="hero-stat"><strong id="total-materiais">1</strong><span>material<br>disponível</span></div>
+      <div class="hero-stat"><strong id="total-disciplinas">1</strong><span>disciplina</span></div>
+      <div class="hero-stat"><strong>✓</strong><span>sem cadastro</span></div>
+     </div>
+     <a class="btn" href="#materiais">Ver materiais <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+   </section>
+   <section id="materiais" class="section" aria-labelledby="titulo-materiais">
+    <div class="content-section-label"><h2 id="titulo-materiais">Materiais disponíveis</h2><small id="contador-resultados">1 material encontrado</small></div>
+    <div class="toolbar"><div class="filters" id="filtros" role="group" aria-label="Filtrar por disciplina"></div>
+     <label class="search"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="busca" placeholder="Buscar material..." aria-label="Buscar material" autocomplete="off"><kbd>/</kbd></label>
+    </div>
+    <div class="materials-grid" id="lista" aria-live="polite"></div>
+   </section>
+   <section id="como-usar" class="section" aria-labelledby="titulo-como-usar">
+    <div class="content-section-label"><h2 id="titulo-como-usar">Como usar</h2><small>3 passos para começar</small></div>
+    <div class="flow-steps">
+     <div class="step"><span class="step-num">1</span><strong>Escolha o material</strong><p>Use a busca ou filtre por disciplina para encontrar seu conteúdo.</p></div>
+     <div class="step"><span class="step-num">2</span><strong>Abra e pratique</strong><p>Toque no material para estudar e usar os recursos interativos.</p></div>
+     <div class="step"><span class="step-num">3</span><strong>Estude de onde estiver</strong><p>Funciona no PC e no celular, sem precisar criar uma conta.</p></div>
+    </div>
+   </section>
+   <section id="perguntas" class="section" aria-labelledby="titulo-perguntas">
+    <div class="content-section-label"><h2 id="titulo-perguntas">Perguntas frequentes</h2><small>O essencial para começar</small></div>
+    <div class="qa">
+     <details><summary>Preciso criar uma conta?</summary><p>Não. É só abrir um material e começar a estudar.</p></details>
+     <details><summary>Posso usar no celular?</summary><p>Sim. O repositório e o material de OSCE possuem layout adaptado para celular, tablet e computador.</p></details>
+     <details><summary>Meu progresso é salvo?</summary><p>Nos materiais que oferecem acompanhamento de progresso, como o OSCE, o resultado é guardado no navegador do dispositivo em que você estuda. Não é sincronizado automaticamente entre aparelhos.</p></details>
+     <details><summary>Como vejo novos materiais?</summary><p>Quando novos arquivos forem adicionados ao repositório, eles aparecerão nesta lista.</p></details>
+    </div>
+   </section>
+   <footer class="page-footer"><span>Feito por Guilherme Mont’Alvão</span><a href="#inicio">Voltar ao início ↑</a></footer>
+  </main>
+ </div>
+</div>
+<nav class="mobile-dock" aria-label="Navegação inferior">
+ <a href="#inicio" class="dock-link" data-section="inicio" aria-current="page"><svg class="icon"><use href="#i-home"/></svg>Início</a>
+ <a href="#materiais" class="dock-link" data-section="materiais"><svg class="icon"><use href="#i-file"/></svg>Materiais</a>
+ <a href="#como-usar" class="dock-link" data-section="como-usar"><svg class="icon"><use href="#i-list"/></svg>Como usar</a>
+ <a href="#perguntas" class="dock-link" data-section="perguntas"><svg class="icon"><use href="#i-help"/></svg>Perguntas</a>
+</nav>
+<script>
+/* Adicione novos materiais nesta lista. Mantenha o nome exato do arquivo enviado ao GitHub. */
+const materiais = [
+  {tag:"HAM 8",titulo:"OSCE de Trauma HAM 8",descricao:"Treine a abordagem ao trauma com casos práticos, checklists de avaliação e simulações de OSCE.",arquivo:"OSCE de Trauma HAM 8.html",detalhe:"27 estações de treino"}
+  // ,{tag:"CI 3",titulo:"Título do material",descricao:"Breve descrição",arquivo:"outro.html",detalhe:"Resumo de revisão"}
+];
+const $ = id=>document.getElementById(id);
+const lista=$('lista'), busca=$('busca'), filtros=$('filtros'), disciplinas=$('disciplinas-lateral');
+const tags=[...new Set(materiais.map(m=>m.tag||'Outros'))];
+let filtroAtivo='Todos';
+function node(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e}
+function icon(id){const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('icon');svg.setAttribute('aria-hidden','true');const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','#i-'+id);svg.append(use);return svg}
+function renderFiltros(){
+ filtros.replaceChildren();disciplinas.replaceChildren();
+ for(const t of ['Todos',...tags]){const b=node('button','filter',t);b.type='button';b.setAttribute('aria-pressed',String(filtroAtivo===t));b.addEventListener('click',()=>{filtroAtivo=t;render()});filtros.append(b)}
+ tags.forEach((t,i)=>{const n=materiais.filter(m=>(m.tag||'Outros')===t).length;const b=node('button','side-link');b.type='button';b.setAttribute('aria-pressed',String(filtroAtivo===t));if(filtroAtivo===t)b.setAttribute('aria-current','page');const symbol=node('span','subject-dot',t.slice(0,1).toUpperCase());symbol.style.background=['#7cc243','#f4812f','#4a7bea','#ee5a7b'][i%4];b.append(symbol,node('span','',t),node('span','right-num',String(n)));b.addEventListener('click',()=>{filtroAtivo=filtroAtivo===t?'Todos':t;render();closeMenu();$('materiais').scrollIntoView({behavior:'smooth'})});disciplinas.append(b)})
+}
+function renderLista(){
+ lista.replaceChildren();const q=busca.value.trim().toLocaleLowerCase('pt-BR');
+ const found=materiais.filter(m=>(filtroAtivo==='Todos'||(m.tag||'Outros')===filtroAtivo)&&[m.titulo,m.descricao,m.tag,m.detalhe].join(' ').toLocaleLowerCase('pt-BR').includes(q));
+ $('contador-resultados').textContent=found.length+' '+(found.length===1?'material encontrado':'materiais encontrados');
+ if(!found.length){const e=node('div','empty');e.append(node('b','','Nenhum material encontrado'),node('p','','Tente outra palavra ou retire o filtro para ver todos os conteúdos.'));const reset=node('button','','Limpar filtros');reset.type='button';reset.addEventListener('click',()=>{filtroAtivo='Todos';busca.value='';render();busca.focus()});e.append(reset);lista.append(e);return}
+ for(const m of found){const a=node('a','material-card');a.href=encodeURI(m.arquivo);a.setAttribute('aria-label','Abrir '+m.titulo);const top=node('div','material-top'),ico=node('span','material-icon');ico.append(icon('file'));top.append(ico,node('span','material-tag',m.tag||'Outros'));a.append(top,node('h3','',m.titulo),node('p','',m.descricao));const foot=node('div','material-foot'),detail=node('span','material-detail'),open=node('span','material-open');detail.append(icon('book'),node('span','',m.detalhe||'Material de estudo'));open.append(node('span','','Abrir material'),icon('arrow'));foot.append(detail,open);a.append(foot);lista.append(a)}
+}
+function render(){renderFiltros();renderLista()}
+$('total-materiais').textContent=materiais.length;
+$('nav-material-count').textContent=materiais.length;
+$('total-disciplinas').textContent=tags.length;
+$('top-count').textContent=materiais.length+' '+(materiais.length===1?'material':'materiais');
+busca.addEventListener('input',renderLista);
+const toggle=$('menu-toggle');function closeMenu(){document.body.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menu')}
+toggle.addEventListener('click',()=>{const isOpen=document.body.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',String(isOpen));toggle.setAttribute('aria-label',isOpen?'Fechar menu':'Abrir menu');if(isOpen)document.querySelector('.sidebar .side-link').focus()});
+$('side-backdrop').addEventListener('click',closeMenu);
+document.querySelectorAll('.side-head, #side-nav a, .mobile-rail a, .mobile-dock a').forEach(a=>a.addEventListener('click',closeMenu));
+function focusSearch(){closeMenu();$('materiais').scrollIntoView({behavior:'smooth'});setTimeout(()=>busca.focus({preventScroll:true}),250)}
+$('top-search').addEventListener('click',focusSearch);
+document.addEventListener('keydown',e=>{const el=document.activeElement;const editing=el && (['INPUT','TEXTAREA','SELECT'].includes(el.tagName)||el.isContentEditable);if(e.key==='/'&&!editing){e.preventDefault();focusSearch()}if(e.key==='Escape'){closeMenu();if(document.activeElement===busca)busca.blur()}});
+/* Estados de navegação em menu lateral, trilha mobile e dock. */
+const links=[...document.querySelectorAll('[data-section]')];
+function currentSection(id){links.forEach(a=>{if(a.dataset.section===id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+links.forEach(a=>a.addEventListener('click',()=>currentSection(a.dataset.section)));
+if('IntersectionObserver' in window){const targets=['materiais','como-usar','perguntas'].map(id=>$(id));const observer=new IntersectionObserver(entries=>{const shown=entries.filter(e=>e.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top);if(shown.length)currentSection(shown[0].target.id);else if(window.scrollY<100)currentSection('inicio')},{rootMargin:'-15% 0px -65% 0px',threshold:0});targets.forEach(e=>observer.observe(e))}
+window.addEventListener('scroll',()=>{if(window.scrollY<90)currentSection('inicio')},{passive:true});
+const themeButton=$('theme-toggle');function syncTheme(){const isLight=document.documentElement.getAttribute('data-theme')==='light';$('theme-label').textContent='Aparência: '+(isLight?'clara':'escura');$('theme-icon').setAttribute('href',isLight?'#i-moon':'#i-sun');document.querySelector('meta[name="theme-color"]').content=isLight?'#f5f5f6':'#0e0e0f'}
+themeButton.addEventListener('click',()=>{const isLight=document.documentElement.getAttribute('data-theme')==='light';document.documentElement.setAttribute('data-theme',isLight?'dark':'light');try{localStorage.setItem('osce-ham8-theme',isLight?'dark':'light')}catch(e){}syncTheme()});
+render();syncTheme();
+</script>
+</body></html>
